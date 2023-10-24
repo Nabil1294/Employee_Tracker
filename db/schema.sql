@@ -4,8 +4,7 @@ USE employees;
 
 CREATE Table department (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(30) UNIQUE NOT NULL,
-    PRIMARY KEY (id)
+    name VARCHAR(30) UNIQUE NOT NULL
 );
 
 CREATE TABLE role (
@@ -13,7 +12,6 @@ CREATE TABLE role (
     title VARCHAR(30) UNIQUE NOT NULL,
     salary DECIMAL NOT NULL,
     department_id INT NOT NULL,
-    PRIMARY KEY (id),
     FOREIGN KEY (department_id)
     REFERENCES department(id)
     ON DELETE CASCADE
